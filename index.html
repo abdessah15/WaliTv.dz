@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wali Tv</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            background: #444;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 20px;
+        }
+        .video-container {
+            text-align: center;
+        }
+        .video-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .video-item {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            width: 300px;
+        }
+        .video-item iframe {
+            width: 100%;
+            height: 169px;
+        }
+        .video-item p {
+            padding: 10px;
+            text-align: center;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>WaliTv.dz</h1>
+</header>
+
+<nav>
+    <a href="#" onclick="filterVideos('all')">Tous</a>
+    <a href="#" onclick="filterVideos('film')">Films</a>
+    <a href="#" onclick="filterVideos('serie')">Séries</a>
+    <a href="#" onclick="filterVideos('doc')">Documentaires</a>
+    <a href="#">Contact</a>
+</nav>
+
+<div class="container">
+    <div class="video-container">
+        <h2>Film en Vedette</h2>
+        <iframe width="800" height="450" src="https://www.youtube.com/embed/M_XWVyEtdws" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <h2>Autres Vidéos</h2>
+    <div class="video-grid">
+        <div class="video-item" data-category="film">
+            <iframe width="300" height="169" src="https://www.youtube.com/embed/M_XWVyEtdws" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p>Titre du Film 1</p>
+        </div>
+        <!-- Ajoutez plus de vidéos YouTube ici avec des codes iframe différents -->
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 WaliTv.dz. Tous droits réservés.</p>
+</footer>
+
+<script>
+    // Fonction pour afficher un message de bienvenue
+    window.onload = function() {
+        alert('Bienvenue sur WaliTv.dz !');
+    };
+
+    // Fonction pour filtrer les vidéos par catégorie
+    function filterVideos(category) {
+        var videos = document.querySelectorAll('.video-item');
+        videos.forEach(function(video) {
+            if (category === 'all' || video.getAttribute('data-category') === category) {
+                video.style.display = 'block';
+            } else {
+                video.style.display = 'none';
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
